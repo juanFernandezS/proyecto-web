@@ -19,7 +19,7 @@ class CreateNewsTable extends Migration
             $table->string('cuerpo_noticia',2000);
             $table->string('imagen_noticia',500);
             $table->boolean('estado');
-            $table->timestamp('fecha_creacion');
+            $table->dateTime('fecha_creacion');
             $table->increments('id_noticia');
             $table->string('rut')->unsigned();
             $table->foreign('rut')->references('rut')->on('user')->onDelete('cascade');
