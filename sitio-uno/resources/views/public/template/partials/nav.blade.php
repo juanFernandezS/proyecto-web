@@ -58,7 +58,7 @@
                         <a href="">Crear cuenta</a>
                     </div><!-- /.modal-footer -->
                 </form>
-
+    
             </div> <!-- /.modal-body -->
 
         </div><!-- /.modal-content -->

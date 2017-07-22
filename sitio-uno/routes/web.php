@@ -15,8 +15,16 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::resource('news','NewsController');
-Route::get('news/{id}/destroy',[
-    'uses'=>'NewsController@destroy',
-    'as'=>'admin.news.destroy'
-]);
+
+Route::group(['prefix' => 'admin'], function(){
+
+    Route::resource('users','UsersController');
+
+    Route::resource('news','NewsController');
+    Route::get('news/{id}/destroy',[
+        'uses'=>'NewsController@destroy',
+        'as'=>'admin.news.destroy'
+    ]);
+
+});
+
