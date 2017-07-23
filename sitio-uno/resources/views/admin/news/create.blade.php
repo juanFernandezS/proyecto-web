@@ -3,10 +3,13 @@
 @section('title','Agregar News')
 
 @section('content')
-    {!! Form::open(['route'=>'admin.news.store','method'=>'POST'])!!}
+    {!! Form::open(['route'=>'news.store','method'=>'POST'])!!}
         <div class="form-group">
-            {!! Form::label('name','Nombre') !!}
-            {!! Form::text('name',null,['class'=>'form-control','placeholder'=>'Nombre del tag','required']) !!}
+            {!! Form::label('titulo','Titulo') !!}
+            {!! Form::text('titulo',null,['class'=>'form-control','placeholder'=>'Nombre de la News','required']) !!}
+            {!! Form::label('cuerpo_noticia','Escriba su Noticia aqui:') !!}
+            {!! Form::text('cuerpo_noticia',null,['class'=>'form-control','placeholder'=>'Text News','required']) !!}
+
         </div>
         <div class="form-group">
             {!! Form::submit('Ingresar Noticia',['class'=>'btn btn-primary']) !!}

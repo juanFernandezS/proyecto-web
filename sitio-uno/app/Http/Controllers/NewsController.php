@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Faker\Provider\DateTime;
 use Illuminate\Http\Request;
 use App\Http\Requests\NewRequest;
 use App\News;
+
+use Laracasts\Flash\Flash;
 
 class NewsController extends Controller
 {
@@ -15,7 +18,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.news.index');
     }
 
     /**
@@ -37,9 +40,11 @@ class NewsController extends Controller
     public function store(NewRequest $request)
     {
         $new = new News($request->all());
+        $date = new DateTime();
+        $new->fecha_creacion = $date->format('Y-m-d');
         $new->save();
 
-        Flash::success('La noticia'.$new->name.'ha sido creada exitosamente');
+        Flash::success('La noticia'.$new->titulo.'ha sido creada exitosamente');
         return redirect()->route('admin.news.index');
     }
 

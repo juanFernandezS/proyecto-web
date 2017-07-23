@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\Request;
 
 class NewRequest extends FormRequest
 {
@@ -24,7 +25,7 @@ class NewRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'max:150|required|unique:news'
+            'titulo'=>'max:150|required|unique:news'
         ];
     }
 }
