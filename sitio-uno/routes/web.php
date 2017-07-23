@@ -14,7 +14,7 @@
 
 Route::group(['prefix' => 'admin'], function(){
 
-    Route::resource('users','UsersController');
+
 
     Route::resource('news','NewsController');
     Route::get('news/{id}/destroy',[
@@ -22,6 +22,11 @@ Route::group(['prefix' => 'admin'], function(){
         'as'=>'admin.news.destroy'
     ]);
 
+});
+
+Route::group(['prefix' => 'public'], function(){
+
+    Route::resource('users','UsersController');
 });
 
 Route::get('/', function () {

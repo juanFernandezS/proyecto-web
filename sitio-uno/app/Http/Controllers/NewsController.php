@@ -18,7 +18,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('news.index');
+        return view('admin.news.index');
     }
 
     /**
@@ -47,7 +47,7 @@ class NewsController extends Controller
         $new->rut='17.617.382-3';
         $new->save();
 
-        Flash::success('La noticia'.$new->titulo.'ha sido creada exitosamente');
+        Flash::success('La noticia  '.$new->titulo.'  ha sido creada exitosamente');
         return redirect()->route('news.index');
     }
 

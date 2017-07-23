@@ -55,7 +55,7 @@
                     <div class="modal-footer">
                         <button class="form-control btn btn-default">
                             <i class="glyphicon glyphicon-log-in"></i> Login</button>
-                        <a href="">Crear cuenta</a>
+                        <li><a href="">Crear cuenta</a></li>
                     </div><!-- /.modal-footer -->
                 </form>
 

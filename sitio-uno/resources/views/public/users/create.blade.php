@@ -1,4 +1,4 @@
-@extends('admin.template.main')
+@extends('public.template.main')
 
 @section('title', 'Crear Usuario')
 
