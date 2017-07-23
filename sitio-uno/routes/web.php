@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
 
 Route::group(['prefix' => 'admin'], function(){
 
@@ -26,5 +22,9 @@ Route::group(['prefix' => 'admin'], function(){
         'as'=>'admin.news.destroy'
     ]);
 
+});
+
+Route::get('/', function () {
+    return view('home');
 });
 
