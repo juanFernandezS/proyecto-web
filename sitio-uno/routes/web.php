@@ -12,9 +12,10 @@
 */
 
 
+Route::get('/','HomeController@home');
+Route::get('/home','HomeController@home');
+
 Route::group(['prefix' => 'admin'], function(){
-
-
 
     Route::resource('news','NewsController');
     Route::get('news/{id}/destroy',[

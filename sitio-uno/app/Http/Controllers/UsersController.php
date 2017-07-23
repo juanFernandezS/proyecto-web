@@ -40,7 +40,7 @@ class UsersController extends Controller
 
         $user->save();
         Flash::success('El usuario'.$user->nickname.'ha sido creado exitosamente');
-        return redirect()->route('public.home');
+        return redirect()->route('home');
     }
 
     /**
