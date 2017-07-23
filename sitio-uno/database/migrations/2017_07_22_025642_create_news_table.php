@@ -22,7 +22,7 @@ class CreateNewsTable extends Migration
             $table->dateTime('fecha_creacion');
             $table->increments('id_noticia');
             $table->string('rut')->unsigned();
-            $table->foreign('rut')->references('rut')->on('user')->onDelete('cascade');
+            $table->foreign('rut')->references('rut')->on('users')->onDelete('cascade');
         });
     }
 

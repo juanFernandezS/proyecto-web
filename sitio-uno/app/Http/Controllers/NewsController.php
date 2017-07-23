@@ -18,7 +18,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('admin.news.index');
+        return view('news.index');
     }
 
     /**
@@ -40,12 +40,15 @@ class NewsController extends Controller
     public function store(NewRequest $request)
     {
         $new = new News($request->all());
-        $date = new DateTime();
-        $new->fecha_creacion = $date->format('Y-m-d');
+        $date = new \DateTime();
+        $new->fecha_creacion = $date->format('Y-m-d H:i:s');
+        $new->imagen_noticia="foto";
+        $new->estado=true;
+        $new->rut='17.617.382-3';
         $new->save();
 
         Flash::success('La noticia'.$new->titulo.'ha sido creada exitosamente');
-        return redirect()->route('admin.news.index');
+        return redirect()->route('news.index');
     }
 
     /**
