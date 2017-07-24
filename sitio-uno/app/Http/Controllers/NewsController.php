@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
 use Faker\Provider\DateTime;
 use Illuminate\Http\Request;
 use App\Http\Requests\NewRequest;
@@ -40,11 +41,13 @@ class NewsController extends Controller
      */
     public function store(NewRequest $request)
     {
-        $file = $request->file('$new->imagen_noticia');
+
+
         $new = new News($request->all());
         $date = new \DateTime();
         $new->fecha_creacion = $date->format('Y-m-d H:i:s');
-
+        $new->imagen_noticia;
+        $file = $request->file('$new-imagen_noticia');
         $new->estado=true;
         $new->rut='17.617.382-3';
         $new->save();
@@ -72,7 +75,9 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $notice = News::find($id);
+        return view('admin.news.edit')->with('news',$notice);
+
     }
 
     /**
@@ -84,7 +89,11 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $notice = News::find($id);
+        $notice->fill($request->all());
+        $notice->save();
+        Flash::warning('La noticia '.$notice->titulo.'a sido modificada exitosamente');
+        return redirect()->route('news.index');
     }
 
     /**
@@ -95,6 +104,9 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $notice = News::find($id);
+        $notice->delete();
+        Flash::error('La noticia ' .$notice->titulo . ' a sido eliminada');
+        return redirect()->route('news.index');
     }
 }

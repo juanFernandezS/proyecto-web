@@ -20,7 +20,7 @@
 
         <div class="form-group">
             {{Form::label('image','Image')}}
-            {{Form::file('image')}}
+            {{Form::file('imagen_noticia')}}
         </div>
         <div class="form-group">
             {!! Form::submit('Ingresar Noticia',['class'=>'btn btn-primary']) !!}
