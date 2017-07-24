@@ -40,10 +40,11 @@ class NewsController extends Controller
      */
     public function store(NewRequest $request)
     {
+        $file = $request->file('$new->imagen_noticia');
         $new = new News($request->all());
         $date = new \DateTime();
         $new->fecha_creacion = $date->format('Y-m-d H:i:s');
-        $new->imagen_noticia="foto";
+
         $new->estado=true;
         $new->rut='17.617.382-3';
         $new->save();

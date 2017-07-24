@@ -135,7 +135,7 @@ return [
     |
     */
 
-    'providers' => [
+    'providers' => array(
 
         /*
          * Laravel Framework Service Providers...
@@ -184,7 +184,8 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
-    ],
+        Malahierba\ChileRut\ChileRutServiceProvider::class,
+    ),
 
     /*
     |--------------------------------------------------------------------------
@@ -238,6 +239,7 @@ return [
          */
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'RUT' => Malahierba\ChileRut\Facades\ChileRut::class,
 
     ],
 

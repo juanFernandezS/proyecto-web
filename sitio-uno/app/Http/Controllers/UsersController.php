@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
+use Illuminate\Support\Facades\Facade;
+use Malahierba\ChileRut\ChileRut;
+
+
+
 class UsersController extends Controller
 {
     /**
@@ -35,12 +40,18 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new User($request->all());
-        $user->password = bcrypt($request->password);
 
-        $user->save();
-        Flash::success('El usuario'.$user->nickname.'ha sido creado exitosamente');
-        return redirect()->route('home');
+        //$chilerut = new ChileRut;
+        $user = new User($request->all());
+        //if(RUT::check ('')){
+            $user->password = bcrypt($request->password);
+            $user->save();
+            Flash::success('El usuario'.$user->nickname.'ha sido creado exitosamente');
+            return redirect()->route('\home');
+        //}else{
+            //Flash::error('RUT INVALIDO');
+        //}
+
     }
 
     /**
