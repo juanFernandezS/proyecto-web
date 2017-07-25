@@ -47,7 +47,7 @@ class UsersController extends Controller
             $user->password = bcrypt($request->password);
             $user->save();
             Flash::success('El usuario'.$user->nickname.'ha sido creado exitosamente');
-            return redirect()->route('\home');
+            return redirect()->route('home');
         //}else{
             //Flash::error('RUT INVALIDO');
         //}

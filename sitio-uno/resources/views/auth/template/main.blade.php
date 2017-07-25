@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    @include('public.template.partials.nav')
+    @include('auth.template.partials.nav')
 
     <section>
         @yield('content')

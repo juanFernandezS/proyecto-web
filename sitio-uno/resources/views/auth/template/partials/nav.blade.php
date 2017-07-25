@@ -18,7 +18,8 @@
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                     <li><a class="btn btn-inverse" data-toggle="modal" data-target="#myModal">
-                            <i class="glyphicon glyphicon-log-in"></i>  Iniciar Sesión</a></li>
+                            <i class="glyphicon glyphicon-log-in"></i>  Iniciar Sesión</a>
+                    </li>
                     </li>
 
                 </ul>
@@ -37,23 +38,34 @@
             </div> <!-- /.modal-header -->
 
             <div class="modal-body">
-                <form role="form">
-                    <div class="form-group">
+                <form role="form" method="POST" action="{{ route('login') }}">
+                    {{ csrf_field() }}
+                    <div class="form-group {{ $errors->has('rut') ? ' has-error' : '' }}" >
                         <div class="input-group">
-                            <input type="text" name="rut" class="form-control" placeholder="Rut" value="">
+                            <input type="text" name="rut" class="form-control" placeholder="Rut" value="" required autofocus>
+                            @if ($errors->has('rut'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('rut') }}</strong>
+                                    </span>
+                            @endif
                             <span class="input-group-addon "><i class="glyphicon glyphicon-user"></i></span>
                         </div>
                     </div> <!-- /.form-group -->
 
-                    <div class="form-group">
+                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                         <div class="input-group">
                             <input type="password" name="password" class="form-control" placeholder="Clave">
+                            @if ($errors->has('password'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                            @endif
                             <span class="input-group-addon"><i class=" glyphicon glyphicon-lock"></i></span>
                         </div> <!-- /.input-group -->
                     </div> <!-- /.form-group -->
 
                     <div class="modal-footer">
-                        <button class="form-control btn btn-default">
+                        <button type="submit" class="form-control btn btn-default" >
                             <i class="glyphicon glyphicon-log-in"></i> Login</button>
                         <a href="{{route('users.create')}}">Crear cuenta</a>
                     </div><!-- /.modal-footer -->
