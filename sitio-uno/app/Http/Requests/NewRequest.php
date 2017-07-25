@@ -25,7 +25,8 @@ class NewRequest extends FormRequest
     public function rules()
     {
         return [
-            'titulo'=>'max:150|required|unique:news'
+            'titulo'=>'max:150|required|unique:news',
+            'imagen_noticia'=>'required'
         ];
     }
 }

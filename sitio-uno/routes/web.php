@@ -21,6 +21,11 @@ Route::group(['prefix' => 'admin'], function(){
         'as'=>'admin.news.destroy'
     ]);
 
+    Route::get('news/{id}/edit',[
+        'uses'=>'NewsController@edit',
+        'as'=>'admin.news.edit'
+    ]);
+
 });
 
 Route::group(['prefix' => 'public'], function(){
