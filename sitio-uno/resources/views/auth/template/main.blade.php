@@ -12,12 +12,10 @@
 </head>
 <body>
 
-    @include('public.template.partials.nav')
+    @include('auth.template.partials.nav')
 
     <section>
-        <div class="panel panel-default">
-            @yield('content')
-        </div>
+        @yield('content')
     </section>
 
     <script src="{{ asset('plugins/jquery/js/jquery-3.2.1.js') }}"></script>

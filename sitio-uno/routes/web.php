@@ -12,8 +12,6 @@
 */
 
 
-Route::get('/','HomeController@home');
-Route::get('/home','HomeController@home');
 
 Route::group(['prefix' => 'admin'], function(){
 
@@ -36,6 +34,9 @@ Route::group(['prefix' => 'public'], function(){
 });
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
