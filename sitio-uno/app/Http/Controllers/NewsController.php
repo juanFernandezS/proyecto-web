@@ -49,6 +49,7 @@ class NewsController extends Controller
         $new->imagen_noticia;
         $file = $request->file($new->imagen_noticia);
         $new->estado=true;
+
         $new->rut='17.617.382-3';
 
         $new->save();
