@@ -8,7 +8,6 @@
         <thead>
             <th> ID</th>
             <th> Titulo Noticia</th>
-            <th> Cuerpo Noticia</th>
             <th> Fecha Creación</th>
         </thead>
         <body>
@@ -16,7 +15,6 @@
                 <tr>
                     <td>{{$notice->id_noticia}}</td>
                     <td>{{$notice->titulo}}</td>
-                    <td>{{$notice->cuerpo_noticia}}</td>
                     <td>{{$notice->fecha_creacion}}</td>
                     <td>
                         <a href="{{route('admin.news.edit',$notice->id_noticia)}}"class="btn btn-warning">

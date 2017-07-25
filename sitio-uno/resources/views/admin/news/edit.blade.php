@@ -10,7 +10,7 @@
     </div>
     <div class="form-group">
         {!! Form::label('cuerpo_noticia','Escriba su Noticia aqui:') !!}
-        {!! Form::textarea('cuerpo_noticia',$news->cuerpo_noticia,['class'=>'form-control','placeholder'=>'Text News','required']) !!}
+        {!! Form::textarea('cuerpo_noticia',$news->cuerpo_noticia,['class'=>'form-control textarea-content','placeholder'=>'Text News','required']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('estado','Estado de Noticia') !!}
@@ -22,4 +22,11 @@
         {!! Form::submit('Editar Noticia',['class'=>'btn btn-primary']) !!}
     </div>
     {!! Form::close() !!}
+@endsection
+
+@section('js')
+    <script>
+        $('.textarea-content').trumbowyg();
+    </script>
+
 @endsection
