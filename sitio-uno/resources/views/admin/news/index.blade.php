@@ -4,6 +4,11 @@
 
 @section('content')
     @include('flash::message')
+
+    <div class="container">
+        <a href="{{route('news.create')}}"class="btn btn-default"><span class="glyphicon glyphicon-pencil">CREARNOTICIA</span> </a>
+
+
     <table class="table table-striped">
         <thead>
             <th> ID</th>
@@ -31,5 +36,6 @@
     </table>
     <div class="text-center">
         {!! $news->render()!!}
+    </div>
     </div>
 @endsection

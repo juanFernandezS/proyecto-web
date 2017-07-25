@@ -47,9 +47,10 @@ class NewsController extends Controller
         $date = new \DateTime();
         $new->fecha_creacion = $date->format('Y-m-d H:i:s');
         $new->imagen_noticia;
-        $file = $request->file('$new-imagen_noticia');
+        $file = $request->file($new->imagen_noticia);
         $new->estado=true;
         $new->rut='17.617.382-3';
+
         $new->save();
 
         Flash::success('La noticia  '.$new->titulo.'  ha sido creada exitosamente');

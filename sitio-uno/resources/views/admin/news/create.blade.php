@@ -25,6 +25,7 @@
         <div class="form-group">
             {!! Form::submit('Ingresar Noticia',['class'=>'btn btn-primary']) !!}
         </div>
+
     {!! Form::close() !!}
 @endsection
 
